@@ -7,6 +7,7 @@ mod git_state;
 mod git_status;
 mod golang;
 mod hostname;
+mod java;
 mod jobs;
 mod line_break;
 mod nix_shell;
@@ -28,6 +29,7 @@ pub fn handle<'a>(module: &str, context: &'a Context) -> Option<Module<'a>> {
     match module {
         "directory" => directory::module(context),
         "character" => character::module(context),
+        "java" => java::module(context),
         "nodejs" => nodejs::module(context),
         "rust" => rust::module(context),
         "python" => python::module(context),
